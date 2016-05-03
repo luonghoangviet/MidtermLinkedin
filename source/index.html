@@ -1,0 +1,182 @@
+<!doctype html>
+<html ng-app="myapp">
+
+<head>
+    <title>1312694 Linkedin</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/materialize-extension.min.css">
+    <link rel="stylesheet" href="css/myapp.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
+    <script src="script/jquery-2.2.3.min.js"></script>
+    <script src="script/angular.min.js"></script>
+    <script src="script/materialize.min.js"></script>
+    <script src="script/myapp.js"></script>
+</head>
+
+<body ng-controller="linkedin">
+    <div id="profile-page">
+        <div id="content">
+            <div id="card">
+                <div class="row profile-main">
+                    <img class="avatar col" ng-src="{{avatar}}" alt="avatar" />
+                    <div class="voverview col">
+                        <div class="vinfo row">
+                            <div style="display: inline-block; float: left;">
+                                <h1 class="vname">{{name[0] + ' ' + name[1]}}</h1>
+                                <p class="vheadline">{{headline}}</p>
+                                <p class="vdemographics">
+                                    <a href="https://www.linkedin.com/vsearch/p?f_G={{info.nation}}&trk=prof-0-ovw-location">{{info.nation}}</a> |
+                                    <a href="https://www.linkedin.com/vsearch/p?f_I={{info.industry}}&trk=prof-0-ovw-industry">{{info.industry}}</a>
+                                </p>
+                                <table class="vsummary">
+                                    <tr>
+                                        <th scope="row"><a href="">Current</a></th>
+                                        <td>
+                                            <a ng-repeat="exp in experience | filter: {endPeriod: 'Present'} | limitTo: 3">
+                                                {{exp.companyName}}<span ng-show="!$last">, </span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><a href="">Previous</a></th>
+                                        <td>
+                                            <a ng-repeat="exp in experience | filter: {endPeriod: '!Present'} | limitTo: 3">
+                                                {{exp.companyName}}<span ng-show="!$last">, </span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><a href="">Education</a></th>
+                                        <td>
+                                            <a ng-repeat="edu in education | limitTo: 1">{{edu.name}}</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                          
+                            <div style="display: inline-block; float: right;">
+                           
+                            </div>
+                        </div>
+                   
+                       
+                    </div>
+                </div>
+                <div class="row profile-extra">
+                    <div class="col link valign-wrapper">
+                        <i id="linkA-bullet" class="valign"></i>
+                        <a class="link-ref valign" href="{{myUrl}}">
+                            <span>{{myUrl}}</span>
+                        </a>
+                    </div>
+                    <div class="col right more-info valign-wrapper link">
+                        <i id="linkB-bullet" class="valign"></i>
+                        <a class="link-ref valign" href="">
+                            <span>Contact Info</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+       
+            <div class="row">
+         
+                <div id="profile" class="col">
+                   
+                    <div class="card-body">
+                        <h2 class="card-title">Background</h2>
+                        <div id="background-content" class="card-content">
+                         
+                            <div class="background-section">
+                                <div class="valign-wrapper background-section-header">
+                                    <h3 class="valign">Summary</h3>
+                                </div>
+                                <p class="description">{{summary}}</p>
+                            </div>
+                           
+                            <div class="background-section">
+                                <div class="valign-wrapper background-section-header">
+                                    <h3 class="valign">Experience</h3>
+                                </div>
+                                <div ng-repeat="exp in experience">
+                                    <div class="row info-bar">
+                                        <div style="display: inline-block">
+                                            <a href="https://www.linkedin.com/title/{{exp.title}}?trk=mprofile_title"
+                                                title="Learn more about this title" class="info-title">{{exp.title}}</a>
+                                            <a href="{{exp.companyUrl}}" class="info-subtitle">{{exp.companyName}}</a>
+                                            <span class="info-date">{{exp.startPeriod}} – {{exp.endPeriod}}
+                                                <span ng-show="exp.duration != ''">({{exp.duration}})</span>
+                                            <span ng-show="exp.location != ''"> | {{exp.location}}</span>
+                                            </span>
+                                        </div>
+                                        <div class="info-logo" ng-show="exp.companyLogo != ''">
+                                            <a href="{{exp.companyUrl}}">
+                                               <img src="{{exp.companyLogo}}" /> 
+                                            </a>                                    
+                                        </div>
+                                    </div>
+                                    <p class="description">{{exp.description}}</p>
+                                </div>
+                            </div>
+                            <!--Project SECTION-->
+                            <div class="background-section">
+                                <div class="valign-wrapper background-section-header">
+                                    <h3 class="valign">Projects</h3>
+                                </div>
+                                <div id="background-volunteerexp">
+                                    
+                                    <ul class="browser-default">
+                                        <li ng-repeat="c in projects">{{c}}</li>
+                                    </ul>                               
+                                </div>
+                            </div>
+                            <!--SKILLS SECTION-->
+                            <div class="background-section">
+                                <div class="valign-wrapper background-section-header">
+                                    <h3 class="valign">Skills</h3>
+                                </div>
+                                <div id="skills-section">
+                                    <div>
+                                        <h5>Top Skills</h5>
+                                        <div class="skill-pill" ng-repeat="skill in skills | limitTo: 10">
+                                            <a class="btn-skill-count waves-effect waves-light btn">{{skill.endorsers}}</a>
+                                            <a class="btn-skill-description" href="https://www.linkedin.com/topic/{{skill.name}}?trk=mprofile_topic">
+                                                {{skill.name}}
+                                            </a>
+                                        </div>
+                                    </div>
+             
+                                </div>
+                            </div>
+                            <!--EDUCATION SECTION-->
+                            <div class="background-section background-last-section">
+                                <div class="valign-wrapper background-section-header">
+                                    <h3 class="valign">Education</h3>
+                                </div>
+                                <div>
+                                    <div class="row info-bar" ng-repeat="edu in education">
+                                        <div style="display: inline-block">
+                                            <a href="{{edu.url}}" class="info-title">{{edu.name}}</a>
+                                            <a class="info-subtitle">Bachelor of Science, Information Technology</a>
+                                            <span class="info-date">{{edu.startPeriod}} – {{edu.endPeriod}}</span>
+                                        </div>
+                                        <div class="info-logo">
+                                            <a href="{{edu.url}}">
+                                               <img src="{{edu.logo}}" height="60" /> 
+                                            </a>              
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
