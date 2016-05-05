@@ -5,11 +5,11 @@
 
 #content {
     position: absolute;
-    top: 200px;
+    top: 150px;
     left: 0;
     right: 0;
     margin: 0px auto;
-    width: 974px;
+    width: 1000px;
 }
 
 #card {
@@ -31,18 +31,18 @@
     height: 240px;
 }
 /**********************************************/
-.profile-overview {
+.voverview {
     width: 734px;
     height: 235px;
     padding: 25px 40px !important;
     position: relative;
 }
 /******OVERVIEW-TOP****************************/
-.overview-info {
+.vinfo {
     margin-bottom: 5px;
 }
 /******OVERVIEW-TOPLEFT******/
-.overview-name {
+.vname {
     margin: 0;
     padding: 0;
     font-size: 22px;
@@ -50,7 +50,7 @@
     line-height: 24px;
     color: #000;
 }
-.overview-headline {
+.vheadline {
     padding: 5px 0px;
     margin: 0;
     font-size: 18px;
@@ -58,25 +58,25 @@
     line-height: 22px;
     color: #666;
 }
-.overview-demographics {
+.vdemographics {
     margin: 2px 0px;
     padding: 0;
     font-size: 13px;
     line-height: 17px;    
     font-weight: normal;
 }
-.overview-demographics a {
+.vdemographics a {
     color: #66696a;
 }
-.overview-demographics a:hover {
+.vdemographics a:hover {
     color: #069;
 }
-.overview-summary {
+.vsummary {
     display: inline-block;
     margin-top: 10px;
     padding: 0;
 }
-.overview-summary th, td {
+.vsummary th, td {
     padding: 2px 0px 0px 0px;
     font-size: 13px;
     line-height: 17px;
@@ -85,15 +85,15 @@
     white-space: nowrap;
     text-align: left;
 }
-.overview-summary th > a {
+.vsummary th > a {
     padding-right: 20px;
     color: #999;   
 }
-.overview-summary td > a {
+.vsummary td > a {
     cursor: pointer;
     color: #333;   
 }
-.overview-summary td > a:hover {
+.vsummary td > a:hover {
     color: #069;   
 }
 /******OVERVIEW-TOPRIGHT******/
