@@ -1,7 +1,56 @@
 
+</style> <!-- Ugly Hack due to jsFiddle issue: http://goo.gl/BUfGZ --> 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/css/foundation.min.css"
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script> 
+<script src="https://rawgithub.com/angular-ui/angular-ui/master/build/angular-ui.js"></script> 
+<style>
+
+body {
+    font-family:"HelveticNeue", sans-serif;
+    font-size: 14px;
+    padding: 20px;
+}
+h2 {
+    color: #999;
+    margin-top: 0;
+}
+.field {
+    margin-bottom: 1em;
+}
+textarea {
+	
+	white-space: pre-line;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: normal;
+	
+	    display: initial !important;
+  height: auto;
+	
+	
+    margin: 0 5px 0 0 !important;
+	
+}
+input {
+    display: initial !important;
+    width: auto !important;
+	
+    margin: 0 5px 0 0 !important;
+	
+}
 #profile-page {
     position: relative;   
 }
+
+.click-to-edit {
+    display: inline-block;
+	white-space: pre-line;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: normal;
+	
+}
+
 
 #content {
     position: absolute;
