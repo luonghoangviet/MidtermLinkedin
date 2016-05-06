@@ -5,14 +5,16 @@
 <script src="https://rawgithub.com/angular-ui/angular-ui/master/build/angular-ui.js"></script> 
 <style>
 
-body {
-    font-family:"HelveticNeue", sans-serif;
-    font-size: 14px;
-    padding: 20px;
-}
+
 h2 {
     color: #999;
     margin-top: 0;
+}
+h1
+{
+	    font-family:"HelveticNeue", sans-serif;
+    font-size: 20px;
+    padding: 20px;
 }
 .field {
     margin-bottom: 1em;
@@ -33,9 +35,9 @@ textarea {
 }
 input {
     display: initial !important;
-    width: auto !important;
-	
-    margin: 0 5px 0 0 !important;
+    width: auto ;
+    margin: 0 3px 0 0 !important;
+	size: auto;
 	
 }
 #profile-page {
@@ -46,6 +48,41 @@ input {
     display: inline-block;
 	white-space: pre-line;
     font-size: 13px;
+    line-height: 17px;
+    font-weight: normal;
+	
+}
+
+.vttclick-to-edit {
+    display: inline-block;
+
+    font-size: 10px;
+    line-height: 10px;
+ 
+    position: relative;
+	
+}
+
+.vtclick-to-edit {
+    display: inline-block;
+	white-space: pre-line;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: normal;
+	
+}
+.vclick-to-edit {
+    display: inline-block;
+	white-space: pre-line;
+    font-size: 17px;
+    line-height: 17px;
+    font-weight: normal;
+	
+}
+.vnclick-to-edit {
+    display: inline-block;
+	white-space: pre-line;
+    font-size: 22px;
     line-height: 17px;
     font-weight: normal;
 	
@@ -324,63 +361,7 @@ input {
     display: inline-block;
 }
 /**********************************************/
-#post-content {
-    margin-top: 1px;
-    padding: 18px 5px 18px 18px;
-    background-color: #f4f4f4;
-}
-#post-header {
-    overflow: hidden;
-    margin-bottom: 16px;
-    padding-right: 3px;   
-}
-#post-header h4 {
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 16px;
-    color: #434649;
-    margin: 0px;
-    float: left;
-}
-#see-more {
-    font-size: 13px;
-    line-height: 17px;
-    color: #66696a;
-    font-weight: normal;
-    float: left;
-    clear: left;
-    text-decoration: none;
-    padding-right: 10px;
-    position: relative;
-}
-#see-more:hover {
-    text-decoration: underline;
-}
-.post {
-    display: inline-block;
-    width: 195px;
-    min-height: 135px;
-    margin-right: 10px;
-    vertical-align: text-top;
-}
-.post-title {
-    display: block;   
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 16px;
-    word-wrap: break-word;
-    color: #000;  
-}
-.post-title:hover {
-    color: #006fa6;
-}
-.post-date {
-    display: block;
-    font-size: 12px;
-    line-height: 14px;
-    color: #66696a;
-    margin-top: 3px;
-}
+
 /**********************************************/
 #background-content {
     padding: 0px 20px 0px 20px;

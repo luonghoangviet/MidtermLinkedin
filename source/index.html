@@ -31,27 +31,33 @@
                     <div class="voverview col">
                         <div class="vinfo row">
                             <div style="display: inline-block; float: left;">
-                                <h1 class="vname">{{name[0] + ' ' + name[1]}}</h1>
-                                <p class="vheadline">{{headline}}</p>
-                                <p class="vdemographics">
-                                    <a href="https://www.linkedin.com/vsearch/p?f_G={{info.nation}}&trk=prof-0-ovw-location">{{info.nation}}</a> |
-                                    <a href="https://www.linkedin.com/vsearch/p?f_I={{info.industry}}&trk=prof-0-ovw-industry">{{info.industry}}</a>
+                             <!--  <h1 class="vname">{{name}}</h1> !-->
+                               <div vnclick-to-edit="name"></div>
+                             <!--   <div click-to-edit="name"></div> !-->
+                             <div >
+                                  <!-- <span class="vheadline">{{headline}} -->
+                                      
+                                      <a vclick-to-edit ="headline"></a> 
+                                  
+                             </div>
+                               
+                                
+                                <p  class="vsummary">
+                                 <!--   <a href="https://www.linkedin.com/vsearch/p?f_G={{info.nation}}&trk=prof-0-ovw-location">{{info.nation}}</a> |
+                                    <a href="https://www.linkedin.com/vsearch/p?f_I={{info.industry}}&trk=prof-0-ovw-industry">{{info.industry}}</a> -->
+                                    <a vtclick-to-edit ="info.nation"></a>       |     <a vtclick-to-edit ="info.industry"></a>  
                                 </p>
                                 <table class="vsummary">
                                     <tr>
-                                        <th scope="row"><a href="">Current</a></th>
+                                        <th scope="row"><a href="">Phone:</a></th>
                                         <td>
-                                            <a ng-repeat="exp in experience | filter: {endPeriod: 'Present'} | limitTo: 3">
-                                                {{exp.companyName}}<span ng-show="!$last">, </span>
-                                            </a>
+                                         <a vtclick-to-edit ="contact.phone"></a> 
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row"><a href="">Previous</a></th>
+                                        <th scope="row"><a href="">Email:</a></th>
                                         <td>
-                                            <a ng-repeat="exp in experience | filter: {endPeriod: '!Present'} | limitTo: 3">
-                                                {{exp.companyName}}<span ng-show="!$last">, </span>
-                                            </a>
+                                           <a vtclick-to-edit ="contact.email"></a> 
                                         </td>
                                     </tr>
                                     <tr>
@@ -94,7 +100,7 @@
                     <div class="card-body">
                         <h2 class="card-title">Background</h2>
                         <div id="background-content" class="card-content">
-                         
+                         <!-- Summary -->
                             <div class="background-section">
                                 <div class="valign-wrapper background-section-header">
                                     <h3 class="valign">Summary</h3> 
@@ -104,6 +110,7 @@
                      <!--           <p class="description">{{summary}}</p> -->
                             </div>
                            
+                               <!-- Experience -->
                             <div class="background-section">
                                 <div class="valign-wrapper background-section-header">
                                     <h3 class="valign">Experience</h3>
@@ -111,8 +118,9 @@
                                 <div ng-repeat="exp in experience">
                                     <div class="row info-bar">
                                         <div style="display: inline-block">
+                                            <a vttclick-to-edit ="exp.title"></a> 
                                             <a href="https://www.linkedin.com/title/{{exp.title}}?trk=mprofile_title"
-                                                title="Learn more about this title" class="info-title">{{exp.title}}</a>
+                                                title="Learn more about this title" class="info-title">{{exp.title}}</a> 
                                             <a href="{{exp.companyUrl}}" class="info-subtitle">{{exp.companyName}}</a>
                                             <span class="info-date">{{exp.startPeriod}} – {{exp.endPeriod}}
                                                 <span ng-show="exp.duration != ''">({{exp.duration}})</span>
@@ -136,7 +144,11 @@
                                 <div id="background-volunteerexp">
                                     
                                     <ul class="browser-default">
-                                        <li ng-repeat="c in projects">{{c}}</li>
+                                      <!--  <li ng-repeat="c in projects">{{c}}</li> -->
+                                        
+                                          <li ng-repeat="c in projects"><a vtclick-to-edit ="c"></a> </li>
+                                        
+                                        
                                     </ul>                               
                                 </div>
                             </div>
@@ -149,10 +161,15 @@
                                     <div>
                                         <h5>Top Skills</h5>
                                         <div class="skill-pill" ng-repeat="skill in skills | limitTo: 10">
+                                            
                                             <a class="btn-skill-count waves-effect waves-light btn">{{skill.endorsers}}</a>
                                             <a class="btn-skill-description" href="https://www.linkedin.com/topic/{{skill.name}}?trk=mprofile_topic">
                                                 {{skill.name}}
                                             </a>
+                                            <a vttclick-to-edit ="skill.endorsers"></a>
+                                            <a vttclick-to-edit ="skill.name"></a>
+                                            
+                                            <a class= "background-volunteerexp"></a>
                                         </div>
                                     </div>
              
@@ -165,8 +182,11 @@
                                 </div>
                                 <div>
                                     <div class="row info-bar" ng-repeat="edu in education">
+                                         
                                         <div style="display: inline-block">
-                                            <a href="{{edu.url}}" class="info-title">{{edu.name}}</a>
+                                            <a vttclick-to-edit ="edu.name"></a>
+                                            <a href="{{edu.url}}" class="info-title">{{edu.name}}</a>  
+                                            
                                             <a class="info-subtitle">Bachelor of Science, Information Technology</a>
                                             <span class="info-date">{{edu.startPeriod}} – {{edu.endPeriod}}</span>
                                         </div>
